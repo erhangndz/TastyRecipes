@@ -1,0 +1,37 @@
+﻿@model List<EntityLayer.Concrete.About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Resim</th>
+        <th>Video</th>
+        <th>Sosyal Medya1</th>
+        <th>Sosyal Medya2</th>
+        <th>Sosyal Medya3</th>
+        <th>Sosyal Medya4</th>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        <tr>
+            <th>@item.AboutID</th>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.Image</td>
+            <td>@item.Video</td>
+            <td>@item.SocialMedia1</td>
+            <td>@item.SocialMedia2</td>
+            <td>@item.SocialMedia3</td>
+            <td>@item.SocialMedia4</td>
+        </tr>
+    }
+
+
+</table>
+

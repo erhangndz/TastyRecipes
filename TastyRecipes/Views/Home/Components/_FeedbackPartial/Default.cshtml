@@ -1,0 +1,35 @@
+﻿@model List<EntityLayer.Concrete.Feedback>
+
+<div class="customer_feedback_area">
+    <div class="container">
+        <div class="row justify-content-center mb-50">
+            <div class="col-xl-9">
+                <div class="section_title text-center">
+                    <h3>Tarifleri deneyenlerin yorumları</h3>
+                    <p>Onlarca farklı kategoride çok çeşitli tariflerimizi uygulayan kişiler her zaman <br> mutlu bir şekilde sonuçlar aldılar işte bu kişilerden bazılarının yorumları.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="customer_active owl-carousel">
+                    @foreach (var item in Model)
+                    {
+                        
+                    
+                    <div class="single_customer d-flex">
+                        <div class="thumb">
+                            <img src="@item.Image" alt="">
+                        </div>
+                        <div class="customer_meta">
+                            <h3>@item.NameSurname</h3>
+                            <span>@item.Title</span>
+                            <p>@item.Description</p>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

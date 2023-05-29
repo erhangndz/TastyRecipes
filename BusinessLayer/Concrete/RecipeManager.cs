@@ -33,6 +33,11 @@ namespace BusinessLayer.Concrete
             return _recipeDal.GetList();
         }
 
+        public List<Recipe> TGetRecipewithCategory()
+        {
+            return _recipeDal.GetRecipewithCategory();
+        }
+
         public void TInsert(Recipe t)
         {
             _recipeDal.Insert(t);   

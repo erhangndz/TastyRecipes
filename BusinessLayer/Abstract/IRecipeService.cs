@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IRecipeService : IGenericService<Recipe>
     {
+        List<Recipe> TGetRecipewithCategory();
     }
 }

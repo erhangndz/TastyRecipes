@@ -29,6 +29,15 @@ namespace TastyRecipes
         {
             services.AddScoped<IAboutDal, EfAboutDal>();
             services.AddScoped<IAboutService, AboutManager>();
+
+            services.AddScoped<IRecipeDal, EfRecipeDal>();
+            services.AddScoped<IRecipeService, RecipeManager>();
+
+            services.AddScoped<IFeedbackDal, EfFeedbackDal>();
+            services.AddScoped<IFeedbackService, FeedbackManager>();
+
+
+
             services.AddControllersWithViews();
         }
 

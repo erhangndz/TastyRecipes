@@ -9,6 +9,6 @@ namespace EntityLayer.Concrete
     public class Subscriber
     {
         public int SubscriberID { get; set; }
-        public int Email { get; set; }
+        public string Email { get; set; }
     }
 }

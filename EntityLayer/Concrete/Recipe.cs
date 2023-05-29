@@ -12,7 +12,6 @@ namespace EntityLayer.Concrete
         public string Title { get; set; }
         public string TimeNeed { get; set; }
         public string Image { get; set; }
-        public int IngredientAmount { get; set; }
         public string IngredientName { get; set; }
         public string Process { get; set; }
         public int RecipeCategoryID { get; set; }

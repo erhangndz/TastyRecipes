@@ -17,6 +17,7 @@ namespace TastyRecipes.Areas.Admin.Controllers
         { 
             var values= _recipeCategoryService.TGetList();
             return View(values);
+
         }
     }
 }

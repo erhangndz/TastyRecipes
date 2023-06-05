@@ -1,0 +1,29 @@
+﻿@model List<EntityLayer.Concrete.ContactInfo>
+@foreach (var item in Model)
+{
+    
+
+<div class="col-lg-4">
+    <div class="media contact-info">
+        <span class="contact-info__icon"><i class="ti-home"></i></span>
+        <div class="media-body">
+            <h3>@item.City</h3>
+            <p>@item.Address</p>
+        </div>
+    </div>
+    <div class="media contact-info">
+        <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+        <div class="media-body">
+            <h3>@item.Phone</h3>
+            <p>@item.AvailableTime</p>
+        </div>
+    </div>
+    <div class="media contact-info">
+        <span class="contact-info__icon"><i class="ti-email"></i></span>
+        <div class="media-body">
+            <h3>@item.Mail</h3>
+            <p>Bize İstediğiniz zaman ulaşabilirsiniz.</p>
+        </div>
+    </div>
+</div>
+}

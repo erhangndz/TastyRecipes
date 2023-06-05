@@ -36,6 +36,14 @@ namespace TastyRecipes
             services.AddScoped<IFeedbackDal, EfFeedbackDal>();
             services.AddScoped<IFeedbackService, FeedbackManager>();
 
+            services.AddScoped<IDishDal, EfDishDal>();
+            services.AddScoped<IDishService, DishManager>();
+
+            services.AddScoped<IContactDal, EfContactDal>();
+            services.AddScoped<IContactService, ContactManager>();
+
+            services.AddScoped<IContactInfoDal, EfContactInfoDal>();
+            services.AddScoped<IContactInfoService, ContactInfoManager>();
 
 
             services.AddControllersWithViews();
@@ -67,6 +75,14 @@ namespace TastyRecipes
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=AdminAbout}/{action=Index}/{id?}"
+                );
+            });
+
         }
     }
 }

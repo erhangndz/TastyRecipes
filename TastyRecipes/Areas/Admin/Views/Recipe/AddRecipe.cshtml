@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Recipe
+@{
+    ViewData["Title"] = "AddRecipe";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Tarif Ekleme</h2>
+
+
+<form action="/Admin/Recipe/AddRecipe/" method="post">
+   
+    <label>Tarif Adı</label>
+    @Html.TextBoxFor(x=>x.Title,new {@class="form-control"})
+    <br />
+    <label>Kategori</label>
+    @Html.DropDownListFor(x => x.RecipeCategoryID, (List<SelectListItem>)ViewBag.category, new { @class = "form-control" })
+    <br />
+    <label>Hazırlama Süresi</label>
+    @Html.TextBoxFor(x=>x.TimeNeed,new {@class="form-control"})
+    <br />
+    <label>Görsel URL</label>
+    @Html.TextBoxFor(x=>x.Image,new {@class="form-control"})
+    <br />
+    <label>Malzemeler</label>
+    @Html.TextAreaFor(x=>x.IngredientName,4,1,new {@class="form-control"})
+    <br />
+    <label>Yapılışı</label>
+    @Html.TextAreaFor(x=>x.Process,4,1,new {@class="form-control"})
+    <br />
+    <button class="btn btn-outline-info">Kaydet</button>
+
+
+</form>
+
+

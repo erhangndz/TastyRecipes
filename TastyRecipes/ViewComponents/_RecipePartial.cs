@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace TastyRecipes.ViewComponents
 {
@@ -14,7 +15,7 @@ namespace TastyRecipes.ViewComponents
 
         public IViewComponentResult Invoke()
         {
-            var values= _recipeService.TGetRecipewithCategory();
+            var values= _recipeService.TGetRecipewithCategory().Take(3).ToList();
             return View(values);
         }
     }

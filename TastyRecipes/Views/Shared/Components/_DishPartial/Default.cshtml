@@ -1,0 +1,24 @@
+﻿@model List<EntityLayer.Concrete.Dish>
+
+<div class="dish_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="dish_wrap d-flex">
+                    @foreach (var item in Model)
+                    {
+                        
+                    
+                    <div class="single_dish text-center">
+                        <div class="thumb">
+                            <img src="@item.ImageURL" alt="">
+                        </div>
+                        <h3>@item.DishName</h3>
+                        <p>@item.Description</p>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+﻿@model EntityLayer.Concrete.Recipe
+@{
+    ViewData["Title"] = "RecipeDetails";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    var ingredientsArray = Model.IngredientName.Split('*');
+}
+
+
+
+
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Tarif Detayı</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+@Html.HiddenFor(x=>x.RecipeID)
+<div class="recepie_details_area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-md-6">
+                <div class="recepies_thumb">
+                    <img src="@Html.DisplayFor(x=>x.Image)" alt="">
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-6">
+                <div class="recepies_info">
+                    <h3>@Html.DisplayFor(x=>x.Title)</h3>
+                   
+
+                    <div class="resepies_details">
+                        <ul>
+                            <li><p><strong>Değerlendirme</strong> : <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </p></li>
+                            <li><p><strong>Süre</strong> : @Html.DisplayFor(x=>x.TimeNeed) Dk. </p></li>
+                            <li><p><strong>Kategori</strong> : @Html.DisplayFor(x=>x.RecipeCategory.RecipeCategoryName)</p></li>
+                          
+                        </ul>
+                    </div>
+                 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="recepies_text">
+                    <b>Malzemeler:</b>
+                    @foreach (var item in ingredientsArray)
+                    {
+                    <p>@item</p>
+                    }
+                    <b>Yapılışı:</b>
+                    <p>@Html.DisplayFor(x=>x.Process)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="latest_trand_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="trand_info text-center">
+                    <p>Yüzlerce farklı kategoride çeşitli tariflerimiz sizi bekliyor.</p>
+                    <h3>En popüler tariflerimizi inceleyin</h3>
+                    <a href="/Recipe/Index/" class="boxed-btn3">Tüm tarifleri gör</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

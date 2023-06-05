@@ -1,0 +1,20 @@
+﻿@model List<EntityLayer.Concrete.About>
+<div class="recepie_header_area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                @foreach (var item in Model)
+                {
+                    
+                
+                <div class="recepie_text text-center">
+                    <h3>
+                        @item.Title
+                    </h3>
+                    <p>@item.Description</p>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

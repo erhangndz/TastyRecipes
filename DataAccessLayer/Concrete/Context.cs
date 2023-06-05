@@ -25,5 +25,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<RecipeCategory> RecipeCategories { get; set; }
         public DbSet<Subscriber> Subscribers { get; set; }
+        public DbSet<Dish> Dishes { get; set; }
     }
 }

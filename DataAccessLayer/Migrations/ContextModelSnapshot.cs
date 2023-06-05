@@ -179,6 +179,27 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("ContactInfos");
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete.Dish", b =>
+                {
+                    b.Property<int>("DishID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DishName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageURL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DishID");
+
+                    b.ToTable("Dishes");
+                });
+
             modelBuilder.Entity("EntityLayer.Concrete.Feedback", b =>
                 {
                     b.Property<int>("FeedbackID")

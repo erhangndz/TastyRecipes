@@ -1,0 +1,21 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımda Düzenleme Sayfası</h2>
+<br /><br />
+<form action="/Admin/AdminAbout/UpdateAbout" method="post">
+    @Html.HiddenFor(x=>x.AboutID)
+<label>Başlık</label>    
+@Html.TextBoxFor(x=>x.Title,new {@class="form-control"})
+<br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x=>x.Description,5,1,new {@class="form-control"})
+    <br />
+
+    <button class="btn btn-outline-info">Kaydet</button>
+
+
+</form>
